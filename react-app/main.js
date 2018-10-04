@@ -1,0 +1,1 @@
+alert("Successful build with webpack!");

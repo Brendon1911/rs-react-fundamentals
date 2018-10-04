@@ -1,24 +1,26 @@
 module.exports = {
-  // The absolute path to the project
+  // The absolute path to your project
   context: __dirname + "/",
-  // Entry point for the app
+  // the entry point for our app
   entry: "./main.js",
-  // Where to put the compiled output (Where the script tag will link to)
+  // where to put the compiled output (what our script tag will link to)
   output: {
-    // Where it's going
+    // where does it go?
     path: __dirname + "/",
-    // What the file is called
+    // what is the file called?
     filename: "bundle.js"
   },
-  // How to debug the bundle. For production I can use 'source-map'
+  // how can we debug our bundle? for production, we can use 'source-map'
   devtool: "eval",
+  // modules
   module: {
     rules: [
       {
-        // Check for all .js files
+        //Check for all js files
         test: /\.js$/,
-        // Don't include the node_modules directory in the search for .js files
+        // Don't include node_modules directory in the search for js files
         exclude: /node_modules/,
+        // Use the babel-loader plugin to transpile the javascript
         use: [
           {
             loader: "babel-loader",
